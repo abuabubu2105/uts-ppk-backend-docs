@@ -1,0 +1,2613 @@
+	
+openapi	"3.0.1"
+info	
+title	"OpenAPI definition"
+version	"v0"
+servers	
+0	
+url	"http://localhost:8080"
+description	"Generated server url"
+paths	
+/borrows	
+get	
+tags	
+0	"borrow-entity-controller"
+description	"get-borrow"
+operationId	"getCollectionResource-borrow-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"borrow-entity-controller"
+description	"create-borrow"
+operationId	"postCollectionResource-borrow-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/BorrowRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/borrows/{id}	
+get	
+tags	
+0	"borrow-entity-controller"
+description	"get-borrow"
+operationId	"getItemResource-borrow-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"borrow-entity-controller"
+description	"update-borrow"
+operationId	"putItemResource-borrow-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/BorrowRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"borrow-entity-controller"
+description	"delete-borrow"
+operationId	"deleteItemResource-borrow-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"borrow-entity-controller"
+description	"patch-borrow"
+operationId	"patchItemResource-borrow-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/BorrowRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/borrows/{id}/equipment	
+get	
+tags	
+0	"borrow-property-reference-controller"
+description	"get-equipment-by-borrow-Id"
+operationId	"followPropertyReference-borrow-get_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"borrow-property-reference-controller"
+description	"update-equipment-by-borrow-Id"
+operationId	"createPropertyReference-borrow-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"borrow-property-reference-controller"
+description	"delete-equipment-by-borrow-Id"
+operationId	"deletePropertyReference-borrow-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"borrow-property-reference-controller"
+description	"patch-equipment-by-borrow-Id"
+operationId	"createPropertyReference-borrow-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/borrows/{id}/equipment/{propertyId}	
+get	
+tags	
+0	"borrow-property-reference-controller"
+description	"get-equipment-by-borrow-Id"
+operationId	"followPropertyReference-borrow-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+delete	
+tags	
+0	"borrow-property-reference-controller"
+description	"delete-equipment-by-borrow-Id"
+operationId	"deletePropertyReferenceId-borrow-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+/borrows/{id}/member	
+get	
+tags	
+0	"borrow-property-reference-controller"
+description	"get-member-by-borrow-Id"
+operationId	"followPropertyReference-borrow-get_2_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"borrow-property-reference-controller"
+description	"update-member-by-borrow-Id"
+operationId	"createPropertyReference-borrow-put_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"borrow-property-reference-controller"
+description	"delete-member-by-borrow-Id"
+operationId	"deletePropertyReference-borrow-delete_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"borrow-property-reference-controller"
+description	"patch-member-by-borrow-Id"
+operationId	"createPropertyReference-borrow-patch_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/borrows/{id}/member/{propertyId}	
+get	
+tags	
+0	"borrow-property-reference-controller"
+description	"get-member-by-borrow-Id"
+operationId	"followPropertyReference-borrow-get_2"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+delete	
+tags	
+0	"borrow-property-reference-controller"
+description	"delete-member-by-borrow-Id"
+operationId	"deletePropertyReferenceId-borrow-delete_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+/equipments	
+get	
+tags	
+0	"equipment-entity-controller"
+description	"get-equipment"
+operationId	"getCollectionResource-equipment-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"equipment-entity-controller"
+description	"create-equipment"
+operationId	"postCollectionResource-equipment-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/EquipmentRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/equipments/search/searchEquipment	
+get	
+tags	
+0	"equipment-search-controller"
+operationId	"executeSearch-equipment-get"
+parameters	
+0	
+name	"searchTerm"
+in	"query"
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/equipments/search/searchEquipmentByMerkAndName	
+get	
+tags	
+0	"equipment-search-controller"
+operationId	"executeSearch-equipment-get_1"
+parameters	
+0	
+name	"merkBarang"
+in	"query"
+schema	
+type	"string"
+1	
+name	"namaBarang"
+in	"query"
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/equipments/{id}	
+get	
+tags	
+0	"equipment-entity-controller"
+description	"get-equipment"
+operationId	"getItemResource-equipment-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"equipment-entity-controller"
+description	"update-equipment"
+operationId	"putItemResource-equipment-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/EquipmentRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"equipment-entity-controller"
+description	"delete-equipment"
+operationId	"deleteItemResource-equipment-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"equipment-entity-controller"
+description	"patch-equipment"
+operationId	"patchItemResource-equipment-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/EquipmentRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/member	
+get	
+tags	
+0	"member-entity-controller"
+description	"get-member"
+operationId	"getCollectionResource-member-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"member-entity-controller"
+description	"create-member"
+operationId	"postCollectionResource-member-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/MemberRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/member/search/findByMemberID	
+get	
+tags	
+0	"member-search-controller"
+operationId	"executeSearch-member-get"
+parameters	
+0	
+name	"member_id"
+in	"query"
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/member/search/findByName	
+get	
+tags	
+0	"member-search-controller"
+operationId	"executeSearch-member-get_1"
+parameters	
+0	
+name	"name"
+in	"query"
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/member/{id}	
+get	
+tags	
+0	"member-entity-controller"
+description	"get-member"
+operationId	"getItemResource-member-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"member-entity-controller"
+description	"update-member"
+operationId	"putItemResource-member-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/MemberRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"member-entity-controller"
+description	"delete-member"
+operationId	"deleteItemResource-member-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"member-entity-controller"
+description	"patch-member"
+operationId	"patchItemResource-member-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/MemberRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/profile	
+get	
+tags	
+0	"profile-controller"
+operationId	"listAllFormsOfMetadata_1"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+/profile/borrows	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_1"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/profile/equipments	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_2"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/profile/member	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_3"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/profile/schedules	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_4"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/profile/trainings	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_5"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/profile/users	
+get	
+tags	
+0	"profile-controller"
+operationId	"descriptor_1_1_6"
+responses	
+200	
+description	"OK"
+content	
+*/*	
+schema	{…}
+application/alps+json	
+schema	{…}
+application/schema+json	
+schema	{…}
+/schedules	
+get	
+tags	
+0	"schedule-entity-controller"
+description	"get-schedule"
+operationId	"getCollectionResource-schedule-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"schedule-entity-controller"
+description	"create-schedule"
+operationId	"postCollectionResource-schedule-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/ScheduleRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/schedules/{id}	
+get	
+tags	
+0	"schedule-entity-controller"
+description	"get-schedule"
+operationId	"getItemResource-schedule-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"schedule-entity-controller"
+description	"update-schedule"
+operationId	"putItemResource-schedule-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/ScheduleRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"schedule-entity-controller"
+description	"delete-schedule"
+operationId	"deleteItemResource-schedule-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"schedule-entity-controller"
+description	"patch-schedule"
+operationId	"patchItemResource-schedule-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/ScheduleRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/trainings	
+get	
+tags	
+0	"training-entity-controller"
+description	"get-training"
+operationId	"getCollectionResource-training-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"training-entity-controller"
+description	"create-training"
+operationId	"postCollectionResource-training-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/TrainingRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/trainings/search/findByScheduleId	
+get	
+tags	
+0	"training-search-controller"
+operationId	"executeSearch-training-get"
+parameters	
+0	
+name	"scheduleId"
+in	"query"
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/trainings/{id}	
+get	
+tags	
+0	"training-entity-controller"
+description	"get-training"
+operationId	"getItemResource-training-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"training-entity-controller"
+description	"update-training"
+operationId	"putItemResource-training-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/TrainingRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"training-entity-controller"
+description	"delete-training"
+operationId	"deleteItemResource-training-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"training-entity-controller"
+description	"patch-training"
+operationId	"patchItemResource-training-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/TrainingRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/trainings/{id}/schedule	
+get	
+tags	
+0	"training-property-reference-controller"
+description	"get-schedule-by-training-Id"
+operationId	"followPropertyReference-training-get_1"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"training-property-reference-controller"
+description	"update-schedule-by-training-Id"
+operationId	"createPropertyReference-training-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"training-property-reference-controller"
+description	"delete-schedule-by-training-Id"
+operationId	"deletePropertyReference-training-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"training-property-reference-controller"
+description	"patch-schedule-by-training-Id"
+operationId	"createPropertyReference-training-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+application/x-spring-data-compact+json	
+schema	
+$ref	"#/components/schemas/CollectionModelObject"
+text/uri-list	
+schema	
+type	"string"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/trainings/{id}/schedule/{propertyId}	
+get	
+tags	
+0	"training-property-reference-controller"
+description	"get-schedule-by-training-Id"
+operationId	"followPropertyReference-training-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+delete	
+tags	
+0	"training-property-reference-controller"
+description	"delete-schedule-by-training-Id"
+operationId	"deletePropertyReferenceId-training-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+1	
+name	"propertyId"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+/users	
+get	
+tags	
+0	"user-entity-controller"
+description	"get-user"
+operationId	"getCollectionResource-user-get_1"
+parameters	
+0	
+name	"page"
+in	"query"
+description	"Zero-based page index (0..N)"
+required	false
+schema	
+minimum	0
+type	"integer"
+default	0
+1	
+name	"size"
+in	"query"
+description	"The size of the page to be returned"
+required	false
+schema	
+minimum	1
+type	"integer"
+default	20
+2	
+name	"sort"
+in	"query"
+description	"Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+required	false
+schema	
+type	"array"
+items	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+application/x-spring-data-compact+json	
+schema	{…}
+text/uri-list	
+schema	{…}
+post	
+tags	
+0	"user-entity-controller"
+description	"create-user"
+operationId	"postCollectionResource-user-post"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/UserRequestBody"
+required	true
+responses	
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+/users/search/findByEmail	
+get	
+tags	
+0	"user-search-controller"
+operationId	"executeSearch-user-get"
+parameters	
+0	
+name	"email"
+in	"query"
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+/users/{id}	
+get	
+tags	
+0	"user-entity-controller"
+description	"get-user"
+operationId	"getItemResource-user-get"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"Not Found"
+put	
+tags	
+0	"user-entity-controller"
+description	"update-user"
+operationId	"putItemResource-user-put"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/UserRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+201	
+description	"Created"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+delete	
+tags	
+0	"user-entity-controller"
+description	"delete-user"
+operationId	"deleteItemResource-user-delete"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+responses	
+204	
+description	"No Content"
+404	
+description	"Not Found"
+patch	
+tags	
+0	"user-entity-controller"
+description	"patch-user"
+operationId	"patchItemResource-user-patch"
+parameters	
+0	
+name	"id"
+in	"path"
+required	true
+schema	
+type	"string"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/UserRequestBody"
+required	true
+responses	
+200	
+description	"OK"
+content	
+application/hal+json	
+schema	{…}
+204	
+description	"No Content"
+/api/users/profile	
+get	
+tags	
+0	"user-controller"
+summary	"Get User Profile"
+description	"Endpoint untuk mendapatkan profil pengguna yang sedang login."
+operationId	"getProfile"
+responses	
+200	
+description	"Berhasil mendapatkan profil pengguna"
+content	
+application/json	
+schema	{…}
+401	
+description	"Tidak terautentikasi"
+content	
+application/json	{}
+put	
+tags	
+0	"user-controller"
+summary	"Update User Profile"
+description	"Endpoint untuk mengedit profil pengguna berdasarkan data yang diberikan."
+operationId	"updateProfile"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/UserDto"
+required	true
+responses	
+200	
+description	"Profil pengguna berhasil diperbarui"
+content	
+application/json	
+schema	{…}
+400	
+description	"Request tidak valid"
+content	
+application/json	{}
+/api/users/change-password	
+put	
+tags	
+0	"user-controller"
+summary	"Change User Password"
+description	"Endpoint untuk mengganti password pengguna yang sedang login."
+operationId	"changePassword"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/ChangePasswordRequest"
+required	true
+responses	
+200	
+description	"Password berhasil diganti"
+content	
+application/json	{}
+400	
+description	"Password lama tidak sesuai"
+content	
+application/json	{}
+/api/members/edit/{id}	
+put	
+tags	
+0	"member-controller"
+summary	"Edit Member"
+description	"Endpoint untuk mengedit data member berdasarkan ID."
+operationId	"editMember"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID member yang akan diedit"
+required	true
+schema	
+type	"integer"
+format	"int64"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/MemberDto"
+required	true
+responses	
+200	
+description	"Member berhasil diperbarui!"
+content	
+application/json	{}
+400	
+description	"Member tidak ditemukan."
+content	
+application/json	{}
+/register	
+post	
+tags	
+0	"auth-controller"
+summary	"Register"
+description	"Register a new user and create an account"
+operationId	"register"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/UserDto"
+required	true
+responses	
+201	
+description	"User successfully registered"
+content	
+application/hal+json	
+schema	{…}
+400	
+description	"Email already registered"
+content	
+application/hal+json	
+schema	{…}
+500	
+description	"An error occurred during registration"
+content	
+application/hal+json	
+schema	{…}
+/login	
+post	
+tags	
+0	"auth-controller"
+summary	"Login"
+description	"Authenticate a user and generate an access token"
+operationId	"login"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/AuthRequest"
+required	true
+responses	
+200	
+description	"Successfully logged in"
+content	
+application/hal+json	
+schema	{…}
+401	
+description	"Invalid email or password"
+content	
+application/hal+json	
+schema	{…}
+500	
+description	"An error occurred during login"
+content	
+application/hal+json	
+schema	{…}
+/jsonrpc	
+post	
+tags	
+0	"json-rpc-controller"
+summary	"Handle JSON-RPC Request"
+description	"Menerima dan memproses request JSON-RPC untuk berbagai metode seperti createEquipment, getEquipments, dan searchEquipments."
+operationId	"handleJsonRpcRequest"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/JsonRpcRequest"
+required	true
+responses	
+200	
+description	"Request berhasil diproses"
+content	
+application/json	{}
+400	
+description	"Request tidak valid"
+content	
+application/json	{}
+/api/trainings/register	
+post	
+tags	
+0	"training-controller"
+summary	"Register New Training"
+description	"Endpoint untuk mendaftar training baru."
+operationId	"registerTraining"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/TrainingDto"
+required	true
+responses	
+200	
+description	"Training berhasil didaftarkan."
+content	
+application/json	{}
+/api/trainings/cancel/{id}	
+post	
+tags	
+0	"training-controller"
+summary	"Cancel Training"
+description	"Endpoint untuk membatalkan training berdasarkan ID."
+operationId	"cancelTraining"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID training yang akan dibatalkan"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Training berhasil dibatalkan."
+content	
+application/json	{}
+400	
+description	"Training tidak ditemukan."
+content	
+application/json	{}
+/api/schedules/create	
+post	
+tags	
+0	"schedule-controller"
+summary	"Create Schedule"
+description	"Endpoint untuk membuat jadwal baru."
+operationId	"createSchedule"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/ScheduleDto"
+required	true
+responses	
+200	
+description	"Jadwal berhasil dibuat!"
+content	
+application/json	{}
+/api/members/add	
+post	
+tags	
+0	"member-controller"
+summary	"Tambah Member"
+description	"Endpoint untuk menambahkan member baru."
+operationId	"addMember"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/MemberDto"
+required	true
+responses	
+200	
+description	"Member berhasil ditambahkan!"
+content	
+application/json	{}
+/api/borrows/return/{id}	
+post	
+tags	
+0	"borrow-controller"
+summary	"Kembalikan Peralatan"
+description	"Endpoint untuk mengembalikan peralatan berdasarkan ID peminjaman."
+operationId	"returnEquipment"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID peminjaman peralatan"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Peralatan berhasil dikembalikan!"
+content	
+application/hal+json	
+schema	{…}
+404	
+description	"ID peminjaman tidak ditemukan."
+content	
+application/hal+json	
+schema	{…}
+/api/borrows/borrow	
+post	
+tags	
+0	"borrow-controller"
+summary	"Pinjam Peralatan"
+description	"Endpoint untuk meminjam peralatan berdasarkan data yang diberikan pada request body."
+operationId	"borrowEquipment"
+requestBody	
+content	
+application/json	
+schema	
+$ref	"#/components/schemas/BorrowDto"
+required	true
+responses	
+200	
+description	"Peralatan berhasil dipinjam!"
+content	
+application/hal+json	
+schema	{…}
+/api/trainings/schedule/{scheduleId}	
+get	
+tags	
+0	"training-controller"
+summary	"Get Trainings by Schedule ID"
+description	"Endpoint untuk mengambil daftar training berdasarkan schedule ID."
+operationId	"getTrainingsBySchedule"
+parameters	
+0	
+name	"scheduleId"
+in	"path"
+description	"ID jadwal yang akan digunakan untuk mencari training"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Berhasil mendapatkan daftar training berdasarkan schedule ID."
+content	
+application/json	{}
+/api/schedules/{id}	
+get	
+tags	
+0	"schedule-controller"
+summary	"Get Schedule by ID"
+description	"Endpoint untuk mengambil jadwal berdasarkan ID."
+operationId	"getSchedule"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID jadwal yang akan diambil"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Jadwal ditemukan."
+content	
+application/json	{}
+404	
+description	"Jadwal tidak ditemukan."
+content	
+application/json	{}
+/api/schedules/getall	
+get	
+tags	
+0	"schedule-controller"
+summary	"Get All Schedules"
+description	"Endpoint untuk mengambil daftar semua jadwal."
+operationId	"getAllSchedules"
+responses	
+200	
+description	"Berhasil mendapatkan daftar jadwal."
+content	
+application/json	{}
+/api/members/getall	
+get	
+tags	
+0	"member-controller"
+summary	"Ambil Semua Member"
+description	"Endpoint untuk mengambil daftar semua member."
+operationId	"getAllMembers"
+responses	
+200	
+description	"Berhasil mendapatkan daftar member."
+content	
+application/json	{}
+/api/borrows/getall	
+get	
+tags	
+0	"borrow-controller"
+summary	"Ambil Daftar Semua Peminjaman"
+description	"Endpoint untuk mendapatkan daftar semua peminjaman peralatan."
+operationId	"getAllBorrows"
+responses	
+200	
+description	"Berhasil mendapatkan daftar peminjaman."
+content	
+application/hal+json	
+schema	{…}
+500	
+description	"Terjadi kesalahan pada server."
+content	
+application/hal+json	
+schema	{…}
+/api/users/delete-account	
+delete	
+tags	
+0	"user-controller"
+summary	"Delete User Account"
+description	"Endpoint untuk menghapus akun pengguna yang sedang login."
+operationId	"deleteAccount"
+responses	
+200	
+description	"Akun berhasil dihapus"
+content	
+application/json	{}
+400	
+description	"Akun tidak ditemukan"
+content	
+application/json	{}
+/api/schedules/delete/{id}	
+delete	
+tags	
+0	"schedule-controller"
+summary	"Delete Schedule"
+description	"Endpoint untuk menghapus jadwal berdasarkan ID."
+operationId	"deleteSchedule"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID jadwal yang akan dihapus"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Jadwal berhasil dihapus!"
+content	
+application/json	{}
+400	
+description	"Jadwal tidak ditemukan."
+content	
+application/json	{}
+/api/members/delete/{id}	
+delete	
+tags	
+0	"member-controller"
+summary	"Hapus Member"
+description	"Endpoint untuk menghapus member berdasarkan ID."
+operationId	"deleteMember"
+parameters	
+0	
+name	"id"
+in	"path"
+description	"ID member yang akan dihapus"
+required	true
+schema	
+type	"integer"
+format	"int64"
+responses	
+200	
+description	"Member berhasil dihapus!"
+content	
+application/json	{}
+400	
+description	"Member tidak ditemukan."
+content	
+application/json	{}
+components	
+schemas	
+AbstractJsonSchemaPropertyObject	
+type	"object"
+properties	
+title	
+type	"string"
+readOnly	
+type	"boolean"
+Item	
+type	"object"
+properties	
+type	
+type	"string"
+properties	
+type	"object"
+additionalProperties	
+$ref	"#/components/schemas/AbstractJsonSchemaPropertyObject"
+requiredProperties	
+type	"array"
+items	
+type	"string"
+JsonSchema	
+type	"object"
+properties	
+title	
+type	"string"
+description	
+type	"string"
+properties	
+type	"object"
+additionalProperties	
+$ref	"#/components/schemas/AbstractJsonSchemaPropertyObject"
+requiredProperties	
+type	"array"
+items	
+type	"string"
+definitions	
+type	"object"
+additionalProperties	
+$ref	"#/components/schemas/Item"
+type	
+type	"string"
+$schema	
+type	"string"
+Links	
+type	"object"
+additionalProperties	
+$ref	"#/components/schemas/Link"
+RepresentationModelObject	
+type	"object"
+properties	
+_links	
+$ref	"#/components/schemas/Links"
+EntityModelUser	
+type	"object"
+properties	
+name	
+type	"string"
+email	
+type	"string"
+password	
+type	"string"
+_links	
+$ref	"#/components/schemas/Links"
+PageMetadata	
+type	"object"
+properties	
+size	
+type	"integer"
+format	"int64"
+totalElements	
+type	"integer"
+format	"int64"
+totalPages	
+type	"integer"
+format	"int64"
+number	
+type	"integer"
+format	"int64"
+PagedModelEntityModelUser	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+users	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+EntityModelTraining	
+type	"object"
+properties	
+member	
+type	"string"
+notes	
+type	"string"
+cancelled	
+type	"boolean"
+_links	
+$ref	"#/components/schemas/Links"
+PagedModelEntityModelTraining	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+trainings	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+CollectionModelObject	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+objects	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+EntityModelSchedule	
+type	"object"
+properties	
+title	
+type	"string"
+dateTime	
+type	"string"
+location	
+type	"string"
+_links	
+$ref	"#/components/schemas/Links"
+CollectionModelEntityModelTraining	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+trainings	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+EntityModelBorrow	
+type	"object"
+properties	
+borrowDate	
+type	"string"
+format	"date"
+returnDate	
+type	"string"
+format	"date"
+borrowStatus	
+type	"string"
+enum	
+0	"BORROWED"
+1	"RETURNED"
+overdueDays	
+type	"integer"
+format	"int32"
+_links	
+$ref	"#/components/schemas/Links"
+PagedModelEntityModelBorrow	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+borrows	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+EntityModelEquipment	
+type	"object"
+properties	
+namaBarang	
+type	"string"
+merkBarang	
+type	"string"
+hargaBarang	
+type	"number"
+format	"double"
+_links	
+$ref	"#/components/schemas/Links"
+EntityModelMember	
+type	"object"
+properties	
+memberID	
+type	"string"
+name	
+type	"string"
+address	
+type	"string"
+phoneNumber	
+type	"string"
+_links	
+$ref	"#/components/schemas/Links"
+PagedModelEntityModelEquipment	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+equipments	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+CollectionModelEntityModelEquipment	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+equipments	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+PagedModelEntityModelMember	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+member	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+CollectionModelEntityModelMember	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+member	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+PagedModelEntityModelSchedule	
+type	"object"
+properties	
+_embedded	
+type	"object"
+properties	
+schedules	
+type	"array"
+items	{…}
+_links	
+$ref	"#/components/schemas/Links"
+page	
+$ref	"#/components/schemas/PageMetadata"
+BorrowRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+member	
+type	"string"
+equipment	
+type	"string"
+borrowDate	
+type	"string"
+format	"date"
+returnDate	
+type	"string"
+format	"date"
+borrowStatus	
+type	"string"
+enum	
+0	"BORROWED"
+1	"RETURNED"
+overdueDays	
+type	"integer"
+format	"int32"
+EquipmentRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+namaBarang	
+type	"string"
+merkBarang	
+type	"string"
+hargaBarang	
+type	"number"
+format	"double"
+MemberRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+memberID	
+type	"string"
+name	
+type	"string"
+address	
+type	"string"
+phoneNumber	
+type	"string"
+ScheduleRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+title	
+type	"string"
+dateTime	
+type	"string"
+location	
+type	"string"
+TrainingRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+schedule	
+type	"string"
+member	
+type	"string"
+notes	
+type	"string"
+cancelled	
+type	"boolean"
+UserRequestBody	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+name	
+type	"string"
+email	
+type	"string"
+password	
+type	"string"
+GrantedAuthority	
+type	"object"
+properties	
+authority	
+type	"string"
+UserDto	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+name	
+type	"string"
+email	
+type	"string"
+password	
+type	"string"
+enabled	
+type	"boolean"
+username	
+type	"string"
+authorities	
+type	"array"
+items	
+$ref	"#/components/schemas/GrantedAuthority"
+accountNonLocked	
+type	"boolean"
+credentialsNonExpired	
+type	"boolean"
+accountNonExpired	
+type	"boolean"
+ChangePasswordRequest	
+type	"object"
+properties	
+oldPassword	
+type	"string"
+newPassword	
+type	"string"
+MemberDto	
+required	
+0	"address"
+1	"memberID"
+2	"name"
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+memberID	
+type	"string"
+name	
+type	"string"
+address	
+type	"string"
+phoneNumber	
+type	"string"
+description	"Data member yang akan ditambahkan"
+AuthRequest	
+required	
+0	"email"
+1	"password"
+type	"object"
+properties	
+email	
+maxLength	50
+minLength	0
+type	"string"
+password	
+maxLength	16
+minLength	0
+type	"string"
+AuthResponse	
+type	"object"
+properties	
+email	
+type	"string"
+accessToken	
+type	"string"
+JsonNode	
+type	"object"
+JsonRpcRequest	
+type	"object"
+properties	
+jsonrpc	
+type	"string"
+method	
+type	"string"
+params	
+$ref	"#/components/schemas/JsonNode"
+id	
+type	"string"
+description	"Request JSON-RPC"
+TrainingDto	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+scheduleId	
+type	"integer"
+format	"int64"
+member	
+type	"string"
+notes	
+type	"string"
+cancelled	
+type	"boolean"
+description	"Data training yang akan didaftarkan"
+ScheduleDto	
+type	"object"
+properties	
+title	
+type	"string"
+dateTime	
+type	"string"
+location	
+type	"string"
+description	"Data jadwal yang akan dibuat"
+BorrowDto	
+type	"object"
+properties	
+id	
+type	"integer"
+format	"int64"
+memberId	
+type	"integer"
+format	"int64"
+equipmentId	
+type	"integer"
+format	"int64"
+borrowDate	
+type	"string"
+format	"date"
+returnDate	
+type	"string"
+format	"date"
+borrowStatus	
+type	"string"
+overdueDays	
+type	"integer"
+format	"int32"
+description	"Data peminjaman peralatan"
+Link	
+type	"object"
+properties	
+href	
+type	"string"
+hreflang	
+type	"string"
+title	
+type	"string"
+type	
+type	"string"
+deprecation	
+type	"string"
+profile	
+type	"string"
+name	
+type	"string"
+templated	
+type	"boolean"
